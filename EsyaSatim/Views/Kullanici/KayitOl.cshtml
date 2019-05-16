@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "GirisYap";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+@model EsyaSatim.ViewModels.KullaniciYeni
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Seipkon is a Premium Quality Admin Site Responsive Template" />
+    <meta name="keywords" content="admin template, admin, admin dashboard, cms, Seipkon Admin, premium admin templates, responsive admin, panel, software, ui, web app, application" />
+    <meta name="author" content="Themescare">
+    <!-- Title -->
+    <title>Teknopark Kuluçka - @ViewBag.Title</title>
+    <!-- Favicon -->
+    @*<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">*@
+    <!-- Animate CSS -->
+    <link href="~/assets/css/animate.min.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link href="~/assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font awesome CSS -->
+    <link href="~/assets/plugins/font-awesome/font-awesome.min.css" rel="stylesheet" />
+    <!-- Themify Icon CSS -->
+    <link href="~/assets/plugins/themify-icons/themify-icons.css" rel="stylesheet" />
+    <!-- Perfect Scrollbar CSS -->
+    <link href="~/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link href="~/assets/css/seipkon.css" rel="stylesheet" />
+    <!-- Responsive CSS -->
+    <link href="~/assets/css/responsive.css" rel="stylesheet" />
+</head>
+<body class="body_white_bg">
+    <!-- Start Page Loading -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- End Page Loading -->
+    <!-- Login Page Header Area Start -->
+    <div class="seipkon-login-page-header-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="login-page-logo">
+                        <a href="index.html">
+                            @*<img src="~/assets/img/logo.png" />*@
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Page Header Area End -->
+    <!-- Login Form Start -->
+    <div class="seipkon-login-form-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-form-box">
+                        <form method="post" action="/Kullanici/KayitOl">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.ValidationSummary()
+                                <div class="form-group">
+                                    <input type="email" name="Email" placeholder="Email Adresi" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="Ad" placeholder="Adı" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="Soyad" placeholder="Soyadı" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="Sifre" placeholder="Şifre" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-layout-submit">
+                                                <button type="submit">Kayıt Ol</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Form End -->
+    <!-- jQuery -->
+    <script src="~/assets/js/jquery-3.1.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    @*<script src="~/assets/plugins/bootstrap/bootstrap.min.js"></script>*@
+    <!-- Bootstrap-select JS -->
+    <script src="~/assets/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <!-- Perfect Scrollbar JS -->
+    <script src="~/assets/plugins/perfect-scrollbar/jquery-perfect-scrollbar.min.js"></script>
+    <!-- Custom JS -->
+    <script src="~/assets/js/seipkon.js"></script>
+</body>

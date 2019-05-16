@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Urun";
+    Layout = "~/Views/Shared/_KullaniciLayout.cshtml";
+}
+
+@model EsyaSatim.ViewModels.UrunlerIndex
+<div class="row">
+    <div class="col-md-12">
+        <div class="breadcromb-area">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="seipkon-breadcromb-left">
+                        <h3>Ürünlerin</h3>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="seipkon-breadcromb-right">
+                        <ul>
+                            <li>Ürünler</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-box">
+            <div class="datatables-example-heading">
+                <h3>Ürünler</h3>
+            </div>
+            <table class="table table-striped" id="datatable">
+                <thead>
+                    <tr>
+                        <th>Adı</th>
+                        <th>Fiyatı</th>
+                        <th>Resim</th>
+                        <th>Açıklama</th>
+                        <th>Kategori</th>
+                        <th>Tarihi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var urun in Model.urunler)
+                    {
+                    <tr>
+                        <td>@urun.Ad</td>
+                        <td>@urun.Fiyat</td>
+                        <td>@urun.Resim</td>
+                        <td>@urun.Aciklama</td>
+                        <td>@urun.Kategori_id</td>
+                        <td>@urun.Tarih</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="@Url.Action("Duzenle",new {urun.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i>Duzenle</a>
+                            </div>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $('#datatable').DataTable({
+                'paging': true,
+                'pagingType': "numbers",
+                'responsive': true,
+                'language': {
+                    searchPlaceholder: 'Arama...',
+                    sSearch: ''
+                }
+            });
+
+        });
+
+    </script>
+
+}

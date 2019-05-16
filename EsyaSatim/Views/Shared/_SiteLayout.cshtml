@@ -1,0 +1,220 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Seipkon is a Premium Quality Admin Site Responsive Template" />
+    <meta name="keywords" content="admin template, admin, admin dashboard, cms, Seipkon Admin, premium admin templates, responsive admin, panel, software, ui, web app, application" />
+    <meta name="author" content="Themescare">
+    <!-- Title -->
+    @*<title>Demirbas Takip - @ViewBag.Title</title>*@
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/img/favicon/favicon-32x32.png">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/assets/css/animate.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/bootstrap.min.css">
+    <!-- Font awesome CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/font-awesome/font-awesome.min.css">
+    <!-- Themify Icon CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/themify-icons/themify-icons.css">
+    <!-- Perfect Scrollbar CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.css">
+    <!-- Jvector CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/jvector/css/jquery-jvectormap.css">
+    <!-- Daterange CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/daterangepicker/css/daterangepicker.css">
+    <!-- Bootstrap-select CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap-select/css/bootstrap-select.min.css">
+    <!-- Summernote CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/summernote/css/summernote.css">
+    <link rel="stylesheet" href="~/assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/datatables/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/datatables/css/buttons.bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/datatables/css/responsive.bootstrap.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="~/assets/css/seipkon.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+</head>
+<body>
+    <!-- Start Page Loading -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- End Page Loading -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <!-- Main Header Start -->
+        <header class="main-header">
+            <!-- Logo Start -->
+            <div class="seipkon-logo">
+                
+                    <img src="assets/img/logo.png" alt="logo">
+                </a>
+            </div>
+            <!-- Logo End -->
+            <!-- Header Top Start -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="header-top-section">
+                        <div class="pull-left">
+
+                            <!-- Collapse Menu Btn Start -->
+                            <button type="button" id="sidebarCollapse" class=" navbar-btn">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <!-- Collapse Menu Btn End -->
+                            <!-- Header Top Search Start -->
+                            <div class="header-top-search">
+                                <form>
+                                    <input type="search" placeholder="Search...">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                            <!-- Header Top Search End -->
+
+                        </div>
+                        <div class="header-top-right-section pull-right">
+                            <ul class="nav nav-pills nav-top navbar-right">
+
+                                <!-- Full Screen Btn Start -->
+                                <li>
+                                    <a href="#" id="fullscreen-button">
+                                        <i class="fa fa-arrows-alt"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="Kullanici/GirisYap"> <p class="fa fa-camera"; style="color:white"> Eşya Sat</p> </a>
+
+                                </li>
+
+                                <!-- Profile Toggle Start -->
+                                <li class="dropdown">
+                                        <a class="dropdown-toggle profile-toggle" data-toggle="dropdown">
+                                            <div class="btn btn-success btn-rounded" type="button">Giriş İşlemleri</div>
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    <div class="profile-box dropdown-menu animated bounceIn">
+                                        <ul>
+                                            <li><a href="@Url.Action("GirisYap","Kullanici")">Giriş Yap</a></li>
+                                            <li><a href="@Url.Action("KayitOl","Kullanici")">Kayıt Ol</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header Top End -->
+        </header>
+        <!-- Main Header End -->
+        <!-- Sidebar Start -->
+        <aside class="seipkon-main-sidebar">
+            <nav id="sidebar">
+                <div class="menu-section">
+                    <ul class="list-unstyled components">
+
+                        <li>
+                            <a href="@Url.Action("Index","Home")">
+                                <i class="fa fa-home"></i>
+                                Ana Sayfa
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-tags"></i>
+                                Kıyafet
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-support"></i>
+                                Spor
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="glyphicon glyphicon-phone"></i>
+                                Elektronik
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-book"></i>
+                                Kitap
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-random"></i>
+                                Diğer
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        <!-- End Sidebar -->
+        <!-- Right Side Content Start -->
+        <section id="content" class="seipkon-content-wrapper">
+            <div class="page-content">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+            <!-- Footer Area Start -->
+            <footer class="seipkon-footer-area">
+                <p>Seipkon - Bootstrap Admin Template by <a href="#">Themescare</a></p>
+            </footer>
+            <!-- End Footer Area -->
+        </section>
+        <!-- End Right Side Content -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- jQuery -->
+    <script src="~/assets/js/jquery-3.1.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- Bootstrap-select JS -->
+    <script src="~/assets/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <!-- Daterange JS -->
+    <script src="~/assets/plugins/daterangepicker/js/moment.min.js"></script>
+    <script src="~/assets/plugins/daterangepicker/js/daterangepicker.js"></script>
+    <!-- Jvector JS -->
+    <script src="~/assets/plugins/jvector/js/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="~/assets/plugins/jvector/js/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/assets/plugins/jvector/js/jvector-init.js"></script>
+    <!-- Raphael JS -->
+    <script src="~/assets/plugins/raphael/js/raphael.min.js"></script>
+    <!-- Morris JS -->
+    <script src="~/assets/plugins/morris/js/morris.min.js"></script>
+    <!-- Sparkline JS -->
+    <script src="~/assets/plugins/sparkline/js/jquery.sparkline.js"></script>
+    <!-- Chart JS -->
+    <script src="~/assets/plugins/charts/js/Chart.js"></script>
+    <!-- Perfect Scrollbar JS -->
+    <script src="~/assets/plugins/perfect-scrollbar/jquery-perfect-scrollbar.min.js"></script>
+    <!-- Vue JS -->
+    <script src="~/assets/plugins/vue/vue.min.js"></script>
+    <!-- Summernote JS -->
+    <script src="~/assets/plugins/summernote/js/summernote.js"></script>
+    <script src="~/assets/plugins/summernote/js/custom-summernote.js"></script>
+    <!-- Dashboard JS -->
+    <script src="~/assets/plugins/select2/js/select2.full.js"></script>
+    <script src="~/assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/plugins/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/assets/plugins/datatables/js/dataTables.buttons.min.js"></script>
+    <script src="~/assets/plugins/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="~/assets/js/dashboard.js"></script>
+    <!-- Custom JS -->
+    <script src="~/assets/js/seipkon.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
