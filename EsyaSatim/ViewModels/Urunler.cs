@@ -14,22 +14,16 @@ namespace EsyaSatim.ViewModels
 
     public class UrunlerYeni
     {
-        [Required, MaxLength(512)]
         public string Ad { get; set; }
 
-        [Required, MaxLength(512)]
         public string Fiyat { get; set; }
 
-        [Required, MaxLength(512)]
         public string Aciklama { get; set; }
 
-        [Required, MaxLength(512)]
-        public string Resim { get; set; }
+        public string ResimYolu { get; set; }
 
-        [Required, MaxLength(512)]
         public string Email { get; set; }
         
-        [Required, MaxLength(512)]
         public string Kategori_id { get; set; }
 
         [Required, DataType(DataType.Date)]
@@ -52,8 +46,7 @@ namespace EsyaSatim.ViewModels
         [Required, MaxLength(1024)]
         public string Aciklama { get; set; }
 
-        [Required, MaxLength(128)]
-        public string Resim { get; set; }
+        public string ResimYolu { get; set; }
 
         [Required, MaxLength(128)]
         public string Kategori { get; set; }

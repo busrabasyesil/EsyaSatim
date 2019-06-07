@@ -19,7 +19,7 @@ namespace EsyaSatim.Migrations
             Create.Table("Urunler")
                              .WithColumn("Id").AsInt32().PrimaryKey().Identity()
                              .WithColumn("Ad").AsString(128)
-                             .WithColumn("Resim").AsString()
+                             .WithColumn("ResimYolu").AsString(1024)
                              .WithColumn("Email").AsString()
                              .WithColumn("Fiyat").AsInt32()
                              .WithColumn("Aciklama").AsString(1024)

@@ -1,85 +1,120 @@
-﻿
-@{
-    ViewBag.Title = "Urun";
-    Layout = "~/Views/Shared/_KullaniciLayout.cshtml";
-}
+﻿@{
+        ViewBag.Title = "Urun";
+        Layout = "~/Views/Shared/_KullaniciLayout.cshtml";
+    }
 
-@model EsyaSatim.ViewModels.UrunlerIndex
-<div class="row">
-    <div class="col-md-12">
-        <div class="breadcromb-area">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="seipkon-breadcromb-left">
-                        <h3>Ürünlerin</h3>
+    @*@model EsyaSatim.ViewModels.UrunlerIndex
+    <div class="row">
+        <div class="col-md-12">
+            <div class="breadcromb-area">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="seipkon-breadcromb-left">
+                            <h3>Ürünlerin</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="seipkon-breadcromb-right">
-                        <ul>
-                            <li>Ana Sayfa</li>
-                        </ul>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="seipkon-breadcromb-right">
+                            <ul>
+                                <li>Ana Sayfa</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <div class="page-box">
-            <div class="datatables-example-heading">
-                <h3>Ürünler</h3>
-            </div>
-            <table class="table table-striped" id="datatable">
-                <thead>
-                    <tr>
-                        <th>Adı</th>
-                        <th>Fiyatı</th>
-                        <th>Resim</th>
-                        <th>Açıklama</th>
-                        <th>Kategori</th>
-                        <th>Satici</th>
-                        <th>Tarihi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var urun in Model.urunler)
-                    {
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-box">
+                <div class="datatables-example-heading">
+                    <h3>Ürünler</h3>
+                </div>
+                <table class="table table-striped" id="datatable">
+                    <thead>
                         <tr>
-                            <td>@urun.Ad</td>
-                            <td>@urun.Fiyat</td>
-                            <td>@urun.Resim</td>
-                            <td>@urun.Aciklama</td>
-                            <td>@urun.Kategori_id</td>
-                            <td>@urun.Email</td>
-                            <td>@urun.Tarih</td>
-                            <td>
-                                @Html.ActionLink("Mesaj gönder", "Edit", new { })
-
-                            </td>
+                            <th>Adı</th>
+                            <th>Fiyatı</th>
+                            <th>Resim</th>
+                            <th>Açıklama</th>
+                            <th>Kategori</th>
+                            <th>Satici</th>
+                            <th>Tarihi</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var urun in Model.urunler)
+                        {
+                            <tr>
+                                <td>@urun.Ad</td>
+                                <td>@urun.Fiyat</td>
+                                <td>@urun.ResimYolu</td>
+                                <td>@urun.Aciklama</td>
+                                <td>@urun.Kategori_id</td>
+                                <td>@urun.Email</td>
+                                <td>@urun.Tarih</td>
+                                <td>
+                                    @Html.ActionLink("Mesaj gönder", "Edit", new { })
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
-@section scripts{
-    <script>
-        $(function () {
-            $('#datatable').DataTable({
-                'paging': true,
-                'pagingType': "numbers",
-                'responsive': true,
-                'language': {
-                    searchPlaceholder: 'Arama...',
-                    sSearch: ''
-                }
+    @section scripts{
+        <script>
+            $(function () {
+                $('#datatable').DataTable({
+                    'paging': true,
+                    'pagingType': "numbers",
+                    'responsive': true,
+                    'language': {
+                        searchPlaceholder: 'Arama...',
+                        sSearch: ''
+                    }
+                });
+
             });
 
-        });
+        </script>
 
-    </script>
+    }*@
 
-}
+@model EsyaSatim.ViewModels.UrunlerIndex
+<div class="box">
+    <div class="container">
+    </div>
+</div>
+<div class="row">
+    @foreach (var urun in Model.urunler)
+    {
+
+        <div class="tesla-carousel-items">
+            <div class="col-md-3 col-xs-6">
+                <div class="product">
+                    <div class="product-cover">
+                        <img src="~/Esyalar/@urun.ResimYolu" alt="product name" />
+                    </div>
+                    <div class="product-details">
+                        <h1>@urun.Ad</h1>
+                        <p>@urun.Aciklama</p>
+                        <p>@urun.Email</p>
+                        <div class="product-price">
+                            @urun.Fiyat
+                        </div>
+                        <div class="btn-group">
+                            <a href="@Url.Action("Duzenle","Urunler",new {urun.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i>Duzenle</a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="@Url.Action("Sil","Urunler",new {urun.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-trash"></i>Sil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>

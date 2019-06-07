@@ -224,6 +224,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Esyalar\IMG_9744.JPG" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -236,6 +237,7 @@
     <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\UrunlerController.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -243,6 +245,7 @@
     <Compile Include="Migrations\_002.cs" />
     <Compile Include="Migrations\_003.cs" />
     <Compile Include="Migrations\_004.cs" />
+    <Compile Include="Models\Kategori.cs" />
     <Compile Include="Models\Kullanici.cs" />
     <Compile Include="Models\Urunler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -269,6 +272,7 @@
     <Content Include="Views\Urunler\Urunler.cshtml" />
     <Content Include="Views\Urunler\UrunEkle.cshtml" />
     <Content Include="Views\Urunler\Duzenle.cshtml" />
+    <Content Include="Views\Shared\_UrunLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

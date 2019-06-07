@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using static EsyaSatim.Models.Kullanici;
 using static EsyaSatim.Models.Urunler;
+using static EsyaSatim.Models.Kategori;
 
 namespace EsyaSatim
 {
@@ -32,6 +33,8 @@ namespace EsyaSatim
             var mapper = new ModelMapper();
             mapper.AddMapping<KullaniciMap>();
             mapper.AddMapping<UrunlerMap>();
+            mapper.AddMapping<KategoriMap>();
+
 
             config.AddMapping(mapper.CompileMappingForAllExplicitlyAddedEntities());
 
