@@ -4,4 +4,32 @@
     Layout = "~/Views/Shared/_KullaniciLayout.cshtml";
 }
 
+@using EsyaSatim.Models;
 
+<table class="table">
+    <thead>
+        <tr>
+            <th>Gönderici Bilgisi</th>
+            <th>Mesaj</th>
+            <th>Alici Bilgisi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewData["mesajlar"] as List<Mesajlar>)
+        {
+        <tr>
+            <th>@item.Gonderen_id</th>
+            <th>@item.Mesaj</th>
+            <th>@item.Alici_id</th>
+            @{ 
+                if (@item.Alici_id == Session["Email"].ToString())
+                {
+            <th>
+                <a href="@Url.Action("Cevapla", "Mesajlar", new { item.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-envelope"></i>Cevapla</a>
+            </th>
+                    }
+                }
+        </tr>
+        }
+    </tbody>
+</table>

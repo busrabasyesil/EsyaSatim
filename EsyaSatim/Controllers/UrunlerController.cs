@@ -1,5 +1,4 @@
-﻿
-using NHibernate.Linq;
+﻿using NHibernate.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,7 +15,7 @@ namespace EsyaSatim.Controllers
     public class UrunlerController : Controller
     {
         // GET: Urunler
-      
+
         public ActionResult Urunler()
         {
             return View(new UrunlerIndex
@@ -28,7 +27,7 @@ namespace EsyaSatim.Controllers
         public ActionResult UrunEkle()
         {
             return View("urunekle");
-         
+
         }
 
         [HttpPost]
@@ -107,7 +106,7 @@ namespace EsyaSatim.Controllers
             urun.Kategori = formData.Kategori;
             Database.Session.Update(urun); //insert into Users (USername,password_hash,email) values ....
             Database.Session.Flush();
-            return RedirectToAction("Index", "Kullanici");
+            return RedirectToAction("Urunler", "Urunler");
 
 
         }
@@ -123,7 +122,7 @@ namespace EsyaSatim.Controllers
             Database.Session.Delete(urun);
             Database.Session.Flush();
 
-            return RedirectToAction("Index", "Kullanici");
+            return RedirectToAction("Urunler", "Urunler");
 
         }
 

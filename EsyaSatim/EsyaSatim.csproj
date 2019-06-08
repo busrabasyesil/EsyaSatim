@@ -293,6 +293,7 @@
     <Content Include="Views\Kullanici\UrunDetay.cshtml" />
     <Content Include="Views\Mesajlar\MesajGonder.cshtml" />
     <Content Include="Views\Mesajlar\Mesajlar.cshtml" />
+    <Content Include="Views\Mesajlar\Cevapla.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

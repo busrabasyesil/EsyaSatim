@@ -43,9 +43,17 @@
                 @Html.ValidationMessageFor(model => model.ResimYolu, "", new { @class = "text-danger" })
             </div>
         </div>*@
-    <div class="form-group">
-        <input type="file" name="ResimYolu" class="button" />
-    </div>
+    @*<div class="form-group">
+            <input type="file" name="ResimYolu" class="button" />
+        </div>*@
+
+    <div class="form-group file-upload">
+        @Html.LabelFor(model => model.ResimYolu, "Fotoğraf", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ResimYolu, new { htmlAttributes = new { @class = "form-control" } })
+            <input type="file" name="ResimYolu" class="button" />
+        </div>
+        </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.Kategori, htmlAttributes: new { @class = "control-label col-md-2" })
