@@ -235,6 +235,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\MesajlarController.cs" />
     <Compile Include="Controllers\UrunlerController.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Enums.cs" />
@@ -247,10 +248,12 @@
     <Compile Include="Migrations\_004.cs" />
     <Compile Include="Models\Kategori.cs" />
     <Compile Include="Models\Kullanici.cs" />
+    <Compile Include="Models\Mesajlar.cs" />
     <Compile Include="Models\Urunler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AuthLogin.cs" />
     <Compile Include="ViewModels\Kullanici.cs" />
+    <Compile Include="ViewModels\Mesajlar.cs" />
     <Compile Include="ViewModels\Urunler.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +276,23 @@
     <Content Include="Views\Urunler\UrunEkle.cshtml" />
     <Content Include="Views\Urunler\Duzenle.cshtml" />
     <Content Include="Views\Shared\_UrunLayout.cshtml" />
+    <Content Include="Views\Urunler\UrunlerElektronik.cshtml" />
+    <Content Include="Views\Urunler\UrunlerSpor.cshtml" />
+    <Content Include="Views\Urunler\UrunlerKiyafet.cshtml" />
+    <Content Include="Views\Urunler\UrunlerKitap.cshtml" />
+    <Content Include="Views\Urunler\UrunlerDiger.cshtml" />
+    <Content Include="Views\Shared\_KullaniciUrun.cshtml" />
+    <Content Include="Views\Kullanici\UrunlerElektronik.cshtml" />
+    <Content Include="Views\Kullanici\UrunlerSpor.cshtml" />
+    <Content Include="Views\Kullanici\UrunlerKiyafet.cshtml" />
+    <Content Include="Views\Kullanici\UrunlerKitap.cshtml" />
+    <Content Include="Views\Kullanici\UrunlerDiger.cshtml" />
+    <Content Include="Views\Shared\_DetayLayout.cshtml" />
+    <Content Include="Views\Urunler\UrunDetay.cshtml" />
+    <Content Include="Views\Shared\KullaniciDetay.cshtml" />
+    <Content Include="Views\Kullanici\UrunDetay.cshtml" />
+    <Content Include="Views\Mesajlar\MesajGonder.cshtml" />
+    <Content Include="Views\Mesajlar\Mesajlar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

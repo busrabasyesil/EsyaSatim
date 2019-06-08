@@ -1,11 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "_UrunLayout";
+    ViewBag.Title = "_KullaniciUrun";
     Layout = "~/Views/Shared/_KullaniciLayout.cshtml";
 }
+
 @model EsyaSatim.ViewModels.UrunlerIndex
 <div class="box">
     <div class="container">
+        @RenderBody()
     </div>
 </div>
 <div class="row">
@@ -16,6 +18,7 @@
             <div class="col-md-3 col-xs-6">
                 <div class="product">
                     <div class="product-cover">
+                        <div class="product-cover-hover"><span><a href="@Url.Action("UrunDetay","Kullanici", new {id= @urun.Id})">Detay</a></span></div>
                         <img src="~/Esyalar/@urun.ResimYolu" alt="product name" />
                     </div>
                     <div class="product-details">
@@ -25,12 +28,6 @@
                         <div class="product-price">
                             @urun.Fiyat
                         </div>
-                        <div class="btn-group">
-                            <a href="@Url.Action("Duzenle","Urunler",new {urun.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i>Duzenle</a>
-                        </div>
-                        <div class="btn-group">
-                            <a href="@Url.Action("Sil","Urunler",new {urun.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-trash"></i>Sil</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -38,3 +35,4 @@
         </div>
     }
 </div>
+

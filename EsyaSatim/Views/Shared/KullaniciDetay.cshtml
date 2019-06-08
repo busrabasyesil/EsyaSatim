@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "KullaniciDetay";
+    Layout = "~/Views/Shared/_KullaniciLayout.cshtml";
+}
+
+
+@model EsyaSatim.ViewModels.UrunlerIndex
+<div class="content">
+    <div class="product-one">
+        <div class="container">
+            @foreach (var urun in Model.urunler)
+            {
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="the-slider product-big-image" data-tesla-plugin="slider" data-tesla-item=".slide" data-tesla-next=".product-image-arrows-right" data-tesla-prev=".product-image-arrows-left" data-tesla-container=".slide-wrapper">
+                            <ul class="slide-wrapper">
+                                <li class="slide"><img src="~/Esyalar/@urun.ResimYolu" alt="product image" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>@urun.Ad</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="product-price" style="font-size:medium">Fiyat :@urun.Fiyat ₺</div>
+                            </div>
+                        </div>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#description" data-toggle="tab">Ürün Açıklaması</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="description">
+                                <p>@urun.Aciklama</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="product-price" style="font-size:large">Satıcı :@urun.Email </div>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-content">
+                                <div class="product-price" style="font-size:large">Eklenme Tarihi :@urun.Tarih </div>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="btn-group">
+                                <a href="@Url.Action("MesajGonder","Mesajlar",new {urun.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-envelope"></i>Mesaj Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="container">
+        @RenderBody()
+    </div>
+</div>

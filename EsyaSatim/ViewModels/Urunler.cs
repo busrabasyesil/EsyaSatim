@@ -24,7 +24,7 @@ namespace EsyaSatim.ViewModels
 
         public string Email { get; set; }
         
-        public string Kategori_id { get; set; }
+        public int Kategori { get; set; }
 
         [Required, DataType(DataType.Date)]
         public string Tarih { get; set; }
@@ -49,7 +49,7 @@ namespace EsyaSatim.ViewModels
         public string ResimYolu { get; set; }
 
         [Required, MaxLength(128)]
-        public string Kategori { get; set; }
+        public int Kategori { get; set; }
 
 
     }

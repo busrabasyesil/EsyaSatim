@@ -103,7 +103,51 @@ namespace EsyaSatim.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-       
+        public ActionResult UrunlerElektronik()
+        {
+            return View(new UrunlerIndex
+            {
+                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Elektronik))
+            });
+        }
+        public ActionResult UrunlerSpor()
+        {
+            return View(new UrunlerIndex
+            {
+                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Spor))
+            });
+        }
+        public ActionResult UrunlerKiyafet()
+        {
+            return View(new UrunlerIndex
+            {
+                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Kiyafet))
+            });
+        }
+        public ActionResult UrunlerKitap()
+        {
+            return View(new UrunlerIndex
+            {
+                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Kitap))
+            });
+        }
+        public ActionResult UrunlerDiger()
+        {
+            return View(new UrunlerIndex
+            {
+                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Diger))
+            });
+        }
+
+        public ActionResult UrunDetay(int Id)
+        {
+            return View(new UrunlerIndex
+            {
+                urunler = Database.Session.Query<Urunler>().Where(x => x.Id == Id)
+            });
+
+        }
+
     }
 }
     

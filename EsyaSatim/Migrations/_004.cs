@@ -18,8 +18,8 @@ namespace EsyaSatim.Migrations
         {
             Create.Table("Mesajlar")
                             .WithColumn("Id").AsInt32().PrimaryKey().Identity()
-                            .WithColumn("Gonderen_id").AsInt32().ForeignKey("Kullanici", "Id").OnDelete(System.Data.Rule.Cascade)
-                            .WithColumn("Alici_id").AsInt32().ForeignKey("Kullanici", "Id")
+                            .WithColumn("Gonderen_id").AsString()
+                            .WithColumn("Alici_id").AsString()
                             .WithColumn("Tarih").AsDateTime()
                             .WithColumn("Mesaj").AsString(1024);
         }

@@ -24,7 +24,7 @@ namespace EsyaSatim.Migrations
                              .WithColumn("Fiyat").AsInt32()
                              .WithColumn("Aciklama").AsString(1024)
                              .WithColumn("Tarih").AsDateTime()
-                             .WithColumn("Kategori_id").AsString();
+                             .WithColumn("Kategori").AsInt32().ForeignKey("Kategori", "Id").OnDelete(System.Data.Rule.Cascade);
 
 
         }

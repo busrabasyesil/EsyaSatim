@@ -85,12 +85,12 @@
 
                                 <!-- Full Screen Btn Start -->
                                 <li>
-                                    <a href="#" id="fullscreen-button">
+                                    <a href="" id="fullscreen-button">
                                         <i class="fa fa-arrows-alt"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" id="fullscreen-button">
+                                    <a href="@Url.Action("Mesajlar","Mesajlar")" id="fullscreen-button">
                                         <i class="fa fa-envelope-o"></i>
                                     </a>
                                 </li>
@@ -135,24 +135,35 @@
                             </a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index","Home")">
-                                <i class="fa fa-home"></i>
+                            <a href="@Url.Action("UrunlerKiyafet","Kullanici")">
+                                <i class="fa fa-tags"></i>
                                 Kıyafet
                             </a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index","Home")">
-                                <i class="fa fa-home"></i>
-                                Araba
+                            <a href="@Url.Action("UrunlerSpor","Kullanici")">
+                                <i class="fa fa-support"></i>
+                                Spor
                             </a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index","Home")">
-                                <i class="fa fa-home"></i>
+                            <a href="@Url.Action("UrunlerElektronik","Kullanici")">
+                                <i class="glyphicon glyphicon-phone"></i>
                                 Elektronik
                             </a>
                         </li>
-
+                        <li>
+                            <a href="@Url.Action("UrunlerKitap","Kullanici")">
+                                <i class="fa fa-book"></i>
+                                Kitap
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("UrunlerDiger","Kullanici")">
+                                <i class="fa fa-random"></i>
+                                Diğer
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>

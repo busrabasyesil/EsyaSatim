@@ -31,8 +31,8 @@
 <div class="row">
     <div class="col-md-12">
         <div class="page-box">
-            
-            @using (Html.BeginForm("UrunEkle","Urunler",FormMethod.Post,new { enctype = "multipart/form-data" }))
+
+            @using (Html.BeginForm("UrunEkle", "Urunler", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 @Html.ValidationSummary()
 
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Aciklama, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Aciklama, "Açıklama", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.Aciklama, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Aciklama, "", new { @class = "text-danger" })
@@ -62,9 +62,21 @@
                     <br />
                 </div>
             </div>*@
+                @*<div class="form-group file-upload">
+            @Html.LabelFor(model => model.ResimYolu, "Fotoğraf", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="ResimYolu" class="button" id="customFile" />
+                <label class="custom-file-label" for="customFile">Fotoğraf Seç</label>
+                <br />
+            </div>
+            </div>*@
 
                 <div class="form-group">
-                    <input type="file" name="ResimYolu" class="button" />
+                    @Html.LabelFor(model => model.ResimYolu, "Fotoğraf", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" name="ResimYolu" class="button" />
+                        <br />
+                    </div>
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Fiyat, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -74,15 +86,37 @@
                         <br />
                     </div>
                 </div>
-
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Kategori_id, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Kategori_id, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Kategori_id, "", new { @class = "text-danger" })
-                        <br />
-                    </div>
+                @Html.LabelFor(model => model.Kategori, "Kategori", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <select class="form-control" id="Kategori" name="Kategori">
+                        <option selected="selected" value="">Seçiniz</option>
+
+                        <option value="1">Elektronik Eşya</option>
+
+                        <option value="2">Spor</option>
+
+                        <option value="3">Kıyafet</option>
+
+                        <option value="4">Kitap</option>
+
+                        <option value="4">Diğer</option>
+                    </select>
                 </div>
+            </div>
+
+                @*<div class="form-group">
+                    Kategori <select id="Kategori" name="Kategori">
+
+                        <option selected="selected" value="">Seçiniz</option>
+
+                        <option value="1">Elektronik Eşya</option>
+
+                        <option value="2">Beyaz Eşya</option>
+
+                        <option value="3">Mobilya</option>
+                    </select>
+                </div>*@
 
                 <input type="submit" value="Ürün Ekle" class="btn btn-success" />
             }

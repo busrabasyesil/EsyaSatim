@@ -15,7 +15,7 @@ namespace EsyaSatim.Models
         public virtual string ResimYolu { get; set; }
         public virtual string Aciklama { get; set; }
         public virtual string Email { get; set; }
-        public virtual string Kategori_id { get; set; }
+        public virtual int Kategori { get; set; }
         public virtual DateTime Tarih { get; set; }
         
         public class UrunlerMap : ClassMapping<Urunler>
@@ -30,7 +30,7 @@ namespace EsyaSatim.Models
                 Property(x => x.ResimYolu, x => x.NotNullable(true));
                 Property(x => x.Aciklama, x => x.NotNullable(true));
                 Property(x => x.Email, x => x.NotNullable(true));
-                Property(x => x.Kategori_id, x => x.NotNullable(true));
+                Property(x => x.Kategori, x => x.NotNullable(true));
                 Property(x => x.Tarih, x => x.NotNullable(true));
                 
             }
