@@ -25,7 +25,7 @@ namespace EsyaSatim.Controllers
                 return Redirect(Url.Content("~/Mesajlar/MesajGonder"));
             }
 
-            var kullanici_email = Database.Session.Query<Mesajlar>().Where(x => x.Id == Convert.ToInt32(formData.Alici_id)).ToList()[0].Gonderen_id;
+            var kullanici_email = Database.Session.Query<Urunler>().Where(x => x.Id == Convert.ToInt32(formData.Alici_id)).ToList()[0].Email;
             var kullanici_id = Database.Session.Query<Kullanici>().Where(x => x.Email == kullanici_email).ToList()[0].Id;
             var mesaj = new Mesajlar()
             {
@@ -82,21 +82,21 @@ namespace EsyaSatim.Controllers
         {
             if (ModelState.IsValid)
             {
-                return Redirect(Url.Content("~/Mesajlar/MesajGonder"));
+                return Redirect(Url.Content("~/Mesajlar/Cevapla"));
             }
 
-            var kullanici_email = Database.Session.Query<Urunler>().Where(x => x.Id == Convert.ToInt32(formData.Gonderen_id)).ToList()[0].Email;
+            var kullanici_email = Database.Session.Query<Mesajlar>().Where(x => x.Id == Convert.ToInt32(formData.Alici_id)).ToList()[0].Gonderen_id;
             var kullanici_id = Database.Session.Query<Kullanici>().Where(x => x.Email == kullanici_email).ToList()[0].Id;
             var mesaj = new Mesajlar()
             {
                 Mesaj = formData.Mesaj,
-                Gonderen_id = kullanici_id.ToString(),
-                Alici_id = Session["Email"].ToString(),
+                Gonderen_id = Session["Email"].ToString(),
+                Alici_id = kullanici_id.ToString(),
                 Tarih = DateTime.Now
             };
 
             Database.Session.Save(mesaj);
-            return RedirectToAction("Mesajlar", "Mesajlar");
+            return Redirect(Url.Content("~/Mesajlar/Mesajlar"));
         }
 
         public ActionResult Cevapla(int id)

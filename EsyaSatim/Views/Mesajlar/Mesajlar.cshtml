@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Mesajlar";
     Layout = "~/Views/Shared/_KullaniciLayout.cshtml";
 }
@@ -17,19 +16,19 @@
     <tbody>
         @foreach (var item in ViewData["mesajlar"] as List<Mesajlar>)
         {
-        <tr>
-            <th>@item.Gonderen_id</th>
-            <th>@item.Mesaj</th>
-            <th>@item.Alici_id</th>
-            @{ 
-                if (@item.Alici_id == Session["Email"].ToString())
-                {
-            <th>
-                <a href="@Url.Action("Cevapla", "Mesajlar", new { item.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-envelope"></i>Cevapla</a>
-            </th>
+            <tr>
+                <th>@item.Gonderen_id</th>
+                <th>@item.Mesaj</th>
+                <th>@item.Alici_id</th>
+                @{
+                    if (@item.Alici_id == Session["Email"].ToString())
+                    {
+                        <th>
+                            <a href="@Url.Action("Cevapla", "Mesajlar", new { item.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-envelope"></i>Cevapla</a>
+                        </th>
                     }
                 }
-        </tr>
+            </tr>
         }
     </tbody>
 </table>
