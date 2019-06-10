@@ -37,12 +37,8 @@ namespace EsyaSatim.ViewModels
 
         [Required, MaxLength(128)]
         public string Ad { get; set; }
-
-
         [Required, MaxLength(128)]
         public string Fiyat { get; set; }
-
-
         [Required, MaxLength(1024)]
         public string Aciklama { get; set; }
 

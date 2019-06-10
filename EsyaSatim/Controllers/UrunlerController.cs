@@ -37,32 +37,11 @@ namespace EsyaSatim.Controllers
             string path = Path.Combine(Server.MapPath("~/Esyalar"), ResimYolu.FileName);
             ResimYolu.SaveAs(path);
 
-            //foreach (var item in ResimYolu)//kaç adet resim seçildiyse, o kadar kez çalışacak
-            //{
-            //    item.SaveAs(Server.MapPath($"~/Esyalar/{item.FileName}"));//resim klasörüne resimleri kaydetme
-
-            //    var urunler = new Urunler()
-            //    {
-            //        Ad = formData.Ad,
-            //        Fiyat = formData.Fiyat,
-            //        Aciklama = formData.Aciklama,
-            //        Email = Session["Email"].ToString(),
-            //        Kategori = formData.Kategori,
-            //        ResimYolu = item.FileName,
-            //        //ResimYolu = formData.ResimYolu,
-            //        Tarih = DateTime.Now
-
-            //    };
-            //    Database.Session.Save(urunler);
-
-            //}
 
             if (ModelState.IsValid)
             {
                 return Redirect(Url.Content("~/Urunler/UrunEkle"));
             }
-            //var kullanici = Database.Session.Query<Kullanici>.Where(a => a.Email == email).Select(s => new Kullanici() { Id = s.Id }).ToList();
-            //string deniz = Session["Email"].ToString();
 
             var urun = new Urunler()
             {
@@ -72,16 +51,13 @@ namespace EsyaSatim.Controllers
                 Email = Session["Email"].ToString(),
                 Kategori = formData.Kategori,
                 ResimYolu = ResimYolu.FileName,
-                //ResimYolu = formData.ResimYolu,
                 Tarih = DateTime.Now
 
 
         };
             ViewBag.kategori = new SelectList(Database.Session.Query<Kategori>(), "Id", "Ad", urun.Kategori);
 
-            //user.SetPassword(formData.Password);
             Database.Session.Save(urun);
-            //return View(formData);
             return RedirectToAction("Index", "Kullanici");
 
         }
@@ -111,9 +87,7 @@ namespace EsyaSatim.Controllers
         [HttpPost]
         public ActionResult Duzenle(int Id, UrunDuzenle formData, HttpPostedFileBase ResimYolu)
         {
-            string path = Path.Combine(Server.MapPath("~/Esyalar"), ResimYolu.FileName);
-            ResimYolu.SaveAs(path);
-
+           
             var urun = Database.Session.Load<Urunler>(Id);
             if (urun == null)
             {
@@ -124,10 +98,19 @@ namespace EsyaSatim.Controllers
             {
                 return View(formData);
             }
+            if (ResimYolu != null)
+            {
+                var path = Path.Combine(Server.MapPath("~/Esyalar"), ResimYolu.FileName);
+                ResimYolu.SaveAs(path);
+                urun.Ad = formData.Ad;
+                urun.Fiyat = formData.Fiyat;
+                urun.Aciklama = formData.Aciklama;
+                urun.ResimYolu = ResimYolu.FileName;
+                urun.Kategori = formData.Kategori;
+            }
             urun.Ad = formData.Ad;
             urun.Fiyat = formData.Fiyat;
             urun.Aciklama = formData.Aciklama;
-            urun.ResimYolu = ResimYolu.FileName;
             urun.Kategori = formData.Kategori;
             ViewBag.kategori = new SelectList(Database.Session.Query<Kategori>(), "Id", "Ad", urun.Kategori);
             Database.Session.Update(urun);
