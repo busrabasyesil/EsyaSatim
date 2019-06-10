@@ -36,18 +36,18 @@
             </div>
         </div>
 
-        @*<div class="form-group">
+        <div class="form-group">
                 @Html.LabelFor(model => model.ResimYolu, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.ResimYolu, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.ResimYolu, "", new { @class = "text-danger" })
                 </div>
-            </div>*@
+            </div>
         @*<div class="form-group">
                 <input type="file" name="ResimYolu" class="button" />
             </div>*@
 
-        <div class="form-group file-upload">
+        @*<div class="form-group file-upload">
             @Html.LabelFor(model => model.ResimYolu, "Fotoğraf", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <img multiple src="~/Esyalar/@Model.ResimYolu" width="250" height="250" alt="Fotoğraf" />
@@ -55,7 +55,7 @@
                     <input type="file" name="ResimYolu" class="button" />
                 </div>
             </div>
-        </div>
+        </div>*@
 
 
         <div class="form-group">
