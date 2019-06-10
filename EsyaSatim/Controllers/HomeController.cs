@@ -16,8 +16,15 @@ namespace EsyaSatim.Controllers
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().ToList()
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList()
             });
         }
+
+        //public ActionResult Arama(string arama)
+        //{
+        //    var arama = Database.Session.Query<Urunler>().Where(x => x.Ad(Arama).Tolist);
+        //    return View(arama);
+        //}
+
     }
 }

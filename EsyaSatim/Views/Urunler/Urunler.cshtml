@@ -16,7 +16,7 @@
             <div class="col-md-3 col-xs-6">
                 <div class="product">
                     <div class="product-cover">
-                        <img src="~/Esyalar/@urun.ResimYolu" alt="product name" />
+                        <img multiple src="~/Esyalar/@urun.ResimYolu" width="250" height="250"  alt="Fotoğraf" />
                     </div>
                     <div class="product-details">
                         <h1>@urun.Ad</h1>
@@ -31,6 +31,8 @@
                         <div class="btn-group">
                             <a href="@Url.Action("Sil","Urunler",new {urun.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-trash"></i>Sil</a>
                         </div>
+                        <br/>
+                        <br/>
                     </div>
                 </div>
             </div>

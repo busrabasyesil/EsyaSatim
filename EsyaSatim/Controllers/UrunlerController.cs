@@ -20,12 +20,13 @@ namespace EsyaSatim.Controllers
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Email == Session["Email"].ToString())
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Email == Session["Email"].ToString())
             });
         }
 
         public ActionResult UrunEkle()
         {
+            ViewBag.kategori = new SelectList(Database.Session.Query<Kategori>(), "Id", "Ad" );
             return View("urunekle");
 
         }
@@ -35,6 +36,26 @@ namespace EsyaSatim.Controllers
         {
             string path = Path.Combine(Server.MapPath("~/Esyalar"), ResimYolu.FileName);
             ResimYolu.SaveAs(path);
+
+            //foreach (var item in ResimYolu)//kaç adet resim seçildiyse, o kadar kez çalışacak
+            //{
+            //    item.SaveAs(Server.MapPath($"~/Esyalar/{item.FileName}"));//resim klasörüne resimleri kaydetme
+
+            //    var urunler = new Urunler()
+            //    {
+            //        Ad = formData.Ad,
+            //        Fiyat = formData.Fiyat,
+            //        Aciklama = formData.Aciklama,
+            //        Email = Session["Email"].ToString(),
+            //        Kategori = formData.Kategori,
+            //        ResimYolu = item.FileName,
+            //        //ResimYolu = formData.ResimYolu,
+            //        Tarih = DateTime.Now
+
+            //    };
+            //    Database.Session.Save(urunler);
+
+            //}
 
             if (ModelState.IsValid)
             {
@@ -54,7 +75,10 @@ namespace EsyaSatim.Controllers
                 //ResimYolu = formData.ResimYolu,
                 Tarih = DateTime.Now
 
-            };
+
+        };
+            ViewBag.kategori = new SelectList(Database.Session.Query<Kategori>(), "Id", "Ad", urun.Kategori);
+
             //user.SetPassword(formData.Password);
             Database.Session.Save(urun);
             //return View(formData);
@@ -70,7 +94,7 @@ namespace EsyaSatim.Controllers
             {
                 return HttpNotFound();
             }
-
+            ViewBag.kategori = new SelectList(Database.Session.Query<Kategori>(), "Id", "Ad", urun.Kategori);
 
             return View(
                 new UrunDuzenle()
@@ -85,8 +109,10 @@ namespace EsyaSatim.Controllers
         }
 
         [HttpPost]
-        public ActionResult Duzenle(int Id, UrunDuzenle formData)
+        public ActionResult Duzenle(int Id, UrunDuzenle formData, HttpPostedFileBase ResimYolu)
         {
+            string path = Path.Combine(Server.MapPath("~/Esyalar"), ResimYolu.FileName);
+            ResimYolu.SaveAs(path);
 
             var urun = Database.Session.Load<Urunler>(Id);
             if (urun == null)
@@ -98,13 +124,13 @@ namespace EsyaSatim.Controllers
             {
                 return View(formData);
             }
-
             urun.Ad = formData.Ad;
             urun.Fiyat = formData.Fiyat;
             urun.Aciklama = formData.Aciklama;
-            urun.ResimYolu = formData.ResimYolu;
+            urun.ResimYolu = ResimYolu.FileName;
             urun.Kategori = formData.Kategori;
-            Database.Session.Update(urun); //insert into Users (USername,password_hash,email) values ....
+            ViewBag.kategori = new SelectList(Database.Session.Query<Kategori>(), "Id", "Ad", urun.Kategori);
+            Database.Session.Update(urun);
             Database.Session.Flush();
             return RedirectToAction("Urunler", "Urunler");
 
@@ -130,35 +156,35 @@ namespace EsyaSatim.Controllers
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Elektronik))
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 1)
             });
         }
         public ActionResult UrunlerSpor()
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Spor))
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 2)
             });
         }
         public ActionResult UrunlerKiyafet()
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Kiyafet))
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 3)
             });
         }
         public ActionResult UrunlerKitap()
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Kitap))
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 4)
             });
         }
         public ActionResult UrunlerDiger()
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Diger))
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 5)
             });
         }
 

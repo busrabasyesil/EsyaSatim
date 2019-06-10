@@ -17,7 +17,7 @@ namespace EsyaSatim.Controllers
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().ToList()
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList()
             });
         }
         public ActionResult KayitOl()
@@ -107,35 +107,35 @@ namespace EsyaSatim.Controllers
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Elektronik))
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 1)
             });
         }
         public ActionResult UrunlerSpor()
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Spor))
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 2)
             });
         }
         public ActionResult UrunlerKiyafet()
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Kiyafet))
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 3)
             });
         }
         public ActionResult UrunlerKitap()
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Kitap))
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 4)
             });
         }
         public ActionResult UrunlerDiger()
         {
             return View(new UrunlerIndex
             {
-                urunler = Database.Session.Query<Urunler>().Where(x => x.Kategori == Convert.ToInt32(Enums.Kategoriler.Diger))
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 5)
             });
         }
 

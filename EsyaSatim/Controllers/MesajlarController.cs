@@ -64,7 +64,7 @@ namespace EsyaSatim.Controllers
 
             string kullanici_Email = Session["Email"].ToString();
             int kullanici_Id = Database.Session.Query<Kullanici>().Where(x => x.Email == kullanici_Email).ToList()[0].Id;
-            List<Mesajlar> mesajlar = Database.Session.Query<Mesajlar>().Where(x => x.Alici_id == kullanici_Id.ToString() || x.Gonderen_id == kullanici_Email).ToList();
+            List<Mesajlar> mesajlar = Database.Session.Query<Mesajlar>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Alici_id == kullanici_Id.ToString() || x.Gonderen_id == kullanici_Email).ToList();
             foreach (var item in mesajlar as List<Mesajlar>)
             {
                 item.Alici_id = Database.Session.Query<Kullanici>().Where(x => x.Id.ToString() == item.Alici_id).ToList()[0].Email;
@@ -73,7 +73,6 @@ namespace EsyaSatim.Controllers
             return View(new MesajlarIndex
             {
                 Mesajlar = Database.Session.Query<Mesajlar>().Where(x => x.Alici_id == kullanici_Id.ToString())
-
             });
         }
 
@@ -105,5 +104,6 @@ namespace EsyaSatim.Controllers
             return View();
 
         }
+
     }
 }
