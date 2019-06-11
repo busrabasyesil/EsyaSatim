@@ -8,9 +8,9 @@
     <meta name="keywords" content="admin template, admin, admin dashboard, cms, Seipkon Admin, premium admin templates, responsive admin, panel, software, ui, web app, application" />
     <meta name="author" content="Themescare">
     <!-- Title -->
-    @*<title>Demirbas Takip - @ViewBag.Title</title>*@
+    <title>AL & SAT - @ViewBag.Title</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="10x10" href="~/assets/img/favicon/Logo2.png">
     <!-- Animate CSS -->
     <link rel="stylesheet" href="~/assets/css/animate.min.css">
     <!-- Bootstrap CSS -->
@@ -53,8 +53,8 @@
         <header class="main-header">
             <!-- Logo Start -->
             <div class="seipkon-logo">
-                
-                    <img src="assets/img/logo.png" alt="logo">
+
+                <img src="~/assets/img/favicon/Logo2.png " style="width:120px; height:58px" />
             </div>
             <!-- Logo End -->
             <!-- Header Top Start -->
@@ -128,7 +128,7 @@
                         <li>
                             <a href="@Url.Action("UrunlerKiyafet","Urunler")">
                                 <i class="fa fa-tags"></i>
-                                Kıyafet
+                                Giyim
                             </a>
                         </li>
                         <li>
@@ -144,9 +144,15 @@
                             </a>
                         </li>
                         <li>
+                            <a href="@Url.Action("UrunlerBebek","Kullanici")">
+                                <i class="fa fa-child"></i>
+                                Bebek ve Çocuk
+                            </a>
+                        </li>
+                        <li>
                             <a href="@Url.Action("UrunlerKitap","Urunler")">
                                 <i class="fa fa-book"></i>
-                                Kitap
+                                Kitap ve Müzik
                             </a>
                         </li>
                         <li>

@@ -126,7 +126,7 @@
     <Content Include="assets\img\carousel\Carousel_5.jpeg" />
     <Content Include="assets\img\carousel\Carousel_6.jpeg" />
     <Content Include="assets\img\error-page-logo.png" />
-    <Content Include="assets\img\favicon\favicon-32x32.png" />
+    <Content Include="assets\img\favicon\Logo2.png" />
     <Content Include="assets\img\gallery\gallery-1.jpeg" />
     <Content Include="assets\img\gallery\gallery-2.jpeg" />
     <Content Include="assets\img\gallery\gallery-3.jpeg" />
@@ -292,8 +292,8 @@
     <Content Include="Views\Shared\KullaniciDetay.cshtml" />
     <Content Include="Views\Kullanici\UrunDetay.cshtml" />
     <Content Include="Views\Mesajlar\MesajGonder.cshtml" />
-    <Content Include="Views\Mesajlar\Mesajlar.cshtml" />
     <Content Include="Views\Mesajlar\Cevapla.cshtml" />
+    <Content Include="Views\Mesajlar\Mesajlar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

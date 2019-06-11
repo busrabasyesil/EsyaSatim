@@ -45,19 +45,6 @@ namespace EsyaSatim.Controllers
             return View();
 
         }
-        //public ActionResult Mesajlar()
-        //{
-
-        //    string kullanici_Email = Session["Email"].ToString();
-        //    int kullanici_Id = Database.Session.Query<Kullanici>().Where(x => x.Email == kullanici_Email).ToList()[0].Id;
-        //    List<Mesajlar> mesajlar = Database.Session.Query<Mesajlar>().Where(x => x.Alici_id == kullanici_Id.ToString()).ToList();
-        //    ViewData["mesajlar"] = mesajlar;
-        //    return View(new MesajlarIndex
-        //    {
-        //        Mesajlar = Database.Session.Query<Mesajlar>().Where(x => x.Alici_id == kullanici_Id.ToString())
-
-        //    });
-        //}
 
         public ActionResult Mesajlar()
         {

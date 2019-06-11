@@ -132,7 +132,6 @@ namespace EsyaSatim.Controllers
             Database.Session.Flush();
 
             return RedirectToAction("Urunler", "Urunler");
-
         }
 
         public ActionResult UrunlerElektronik()
@@ -163,11 +162,18 @@ namespace EsyaSatim.Controllers
                 urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 4)
             });
         }
-        public ActionResult UrunlerDiger()
+        public ActionResult UrunlerBebek()
         {
             return View(new UrunlerIndex
             {
                 urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 5)
+            });
+        }
+        public ActionResult UrunlerDiger()
+        {
+            return View(new UrunlerIndex
+            {
+                urunler = Database.Session.Query<Urunler>().OrderByDescending(x => x.Tarih).ToList().Where(x => x.Kategori == 6)
             });
         }
 
