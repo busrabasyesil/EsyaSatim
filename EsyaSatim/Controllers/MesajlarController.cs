@@ -27,9 +27,10 @@ namespace EsyaSatim.Controllers
 
             var kullanici_email = Database.Session.Query<Urunler>().Where(x => x.Id == Convert.ToInt32(formData.Alici_id)).ToList()[0].Email;
             var kullanici_id = Database.Session.Query<Kullanici>().Where(x => x.Email == kullanici_email).ToList()[0].Id;
+            var urun_isim = Database.Session.Query<Urunler>().Where(x => x.Id == Convert.ToInt32(formData.Alici_id)).ToList()[0].Ad;
             var mesaj = new Mesajlar()
             {
-                Mesaj = formData.Mesaj,
+                Mesaj = urun_isim.ToString() + "  Hakkında Mesaj - " + formData.Mesaj,
                 Gonderen_id = Session["Email"].ToString(),
                 Alici_id = kullanici_id.ToString(),
                 Tarih = DateTime.Now

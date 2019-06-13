@@ -23,14 +23,16 @@
                     </div>
                     <div class="product-details">
                         <h1>@urun.Ad</h1>
-                        <p>@urun.Aciklama</p>
-                        <p>@urun.Email</p>
+                        @*<p>@urun.Aciklama</p>
+                        <p>@urun.Email</p>*@
                         <div class="product-price">
-                            @urun.Fiyat
+                            @urun.Fiyat TL
                         </div>
                         <div class="btn-group">
                             <a href="@Url.Action("MesajGonder","Mesajlar",new {urun.Id })" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-envelope"></i>Mesaj Gönder</a>
                         </div>
+                        <br/>
+                        <br/>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="admin template, admin, admin dashboard, cms, Seipkon Admin, premium admin templates, responsive admin, panel, software, ui, web app, application" />
     <meta name="author" content="Themescare">
     <!-- Title -->
-    <title>AL & SAT- @ViewBag.Title</title>
+    <title>AL & SAT</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="~/assets/img/favicon/Logo2.png">
     <!-- Animate CSS -->
@@ -54,7 +54,7 @@
         <header class="main-header">
             <!-- Logo Start -->
             <div class="seipkon-logo">
-                <a href="index.html">
+                <a href="@Url.Action("Index","Kullanici")">
                     <img src="~/assets/img/favicon/Logo2.png " style="width:120px; height:58px" />
                 </a>
             </div>
@@ -183,7 +183,7 @@
             </div>
             <!-- Footer Area Start -->
             <footer class="seipkon-footer-area">
-                <p>Seipkon - Bootstrap Admin Template by <a href="#">Themescare</a></p>
+                @*<p>Seipkon - Bootstrap Admin Template by <a href="#">Themescare</a></p>*@
             </footer>
             <!-- End Footer Area -->
         </section>

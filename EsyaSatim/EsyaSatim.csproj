@@ -294,6 +294,8 @@
     <Content Include="Views\Mesajlar\MesajGonder.cshtml" />
     <Content Include="Views\Mesajlar\Cevapla.cshtml" />
     <Content Include="Views\Mesajlar\Mesajlar.cshtml" />
+    <Content Include="Views\Kullanici\UrunlerBebek.cshtml" />
+    <Content Include="Views\Urunler\UrunlerBebek.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
